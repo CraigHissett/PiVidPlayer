@@ -20,12 +20,9 @@ To Address:
   
 2) Creating Playlists
 
-  ListDrives - Lists all attached storage (Multiple memory sticks may be attached via built-in USB hub)
-  
-  FindFolders - Finds folders on Listed drives matching the name of the Playlist; PeppaPig, Barney, FiremanSam etc
-  
-  AddFiles - Adds the files in the folders located using FindFolders into the associated playlist
-  
+  Playlists.py now compiles all playlists (based on search criteria in a text file called 'PlaylistDefs.txt').
+  It searches all drives for files containing the playlist name (ie Peppa Pig) and dumps their location to a playlist file (Peppa Pig.txt for instance).
+  To Do - Convert to a class, pass playlist contents to player.py when done.
   
 3) ButtonPresses
 
