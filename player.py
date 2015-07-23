@@ -3,7 +3,7 @@ import time
 import wx
 import MplayerCtrl as mpc
 import wx.lib.buttons as buttons
- 
+
 dirName = os.path.dirname(os.path.abspath(__file__))
 bitmapDir = os.path.join(dirName, 'bitmaps')
  
