@@ -4,26 +4,30 @@ import time
 # set buttons to use Broadcom naming convention
 GPIO.setmode(GPIO.BCM)
 
-# Set up the 9 required button pins
-# Using internal pull up resistor; no need for one in circuit
-# other pin on buttons to ground
-# pins to use
-# BCM 14,15 18 - pins 8, 10, 12
-# BCM 17, 21, 22 - pins 11, 13, 15
-# BCM 10, 9, 11 - pins 19, 21, 13
+# Set up the button pins, 3 banks of 3
 
-GPIO.setup(14, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(9, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+LB1 = 14    # Actual pin 8 
+LB2 = 15    # Actual pin 10
+LB3 = 18    # Actual pin 12
+RB1 = 17    # Actual pin 11
+RB2 = 21    # Actual pin 13
+RB3 = 22    # Actual pin 15
+CB1 = 10    # Actual pin 19
+CB2 = 9    # Actual pin 21
+CB3 = 11    # Actual pin 13
+
+pins = [LB1, LB2, LB3, RB1, RB2, RB3, CB1, CB2, CB3]
+# Using internal pull up resistor; no need for one in circuit; other pin on buttons to ground
+
+for pin in pins:
+    GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 while True:
-    input_state = GPIO.input(18)
-    if input_state == False:
-        print('Button Pressed')
-        time.sleep(0.2)
+    for pin in pins:
+        input_state = GPIO.input(pin)
+        if input_state == False:
+            print('Button ' & pin & ' Pressed')
+            time.sleep(0.2)
+ 
+# Add below line to reset all pin status on close       
+#GPIO.cleanup()
