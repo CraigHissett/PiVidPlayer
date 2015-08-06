@@ -14,7 +14,7 @@ RB2 = 21    # Actual pin 13
 RB3 = 22    # Actual pin 15
 CB1 = 10    # Actual pin 19
 CB2 = 9    # Actual pin 21
-CB3 = 11    # Actual pin 13
+CB3 = 11    # Actual pin 23
 
 pins = [LB1, LB2, LB3, RB1, RB2, RB3, CB1, CB2, CB3]
 # Using internal pull up resistor; no need for one in circuit; other pin on buttons to ground
