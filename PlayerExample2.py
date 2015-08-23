@@ -25,3 +25,5 @@
 >>> omx.position
 9.43
 >>> omx.stop()
+
+#read notes for ideas on how to change
