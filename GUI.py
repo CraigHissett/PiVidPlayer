@@ -18,7 +18,7 @@ BGCOLOR = BLACK
 def CheckForKeyPress():
     #Escape button on keyboard closes, for debug purposes
     #The For event below to be edited to capture GPIO buttons
-    #explore setting up buttons as a cloass to be imported
+    #explore setting up buttons.py as defs to be called and a value returned etc?
     if len(pygame.event.get(QUIT)) > 0:
         terminate()
     keyUpEvents = pygame.event.get(KEYUP)
@@ -28,7 +28,9 @@ def CheckForKeyPress():
         terminate()
     return keyUpEvents[0].key
 
-#    for event in pygame.event.get(): # event handling loop
+#   Further events handling - to be integrated
+#Look for mouse functions too - use touch screen for input!
+#    for event in pygame.event.get(): 
 #        if event.type == QUIT:
 #            terminate()
 #        elif event.type == KEYDOWN:
@@ -51,24 +53,24 @@ def ShowStartScreen():
     fontObj = pygame.font.Font('freesansbold.ttf', 32)
     textSurfaceObj = fontObj.render('Hello, Isaac!', True, GREEN, BLACK)
     textRectObj = textSurfaceObj.get_rect()
-    textRectObj.center = (400, 300)
+    textRectObj.center = (400, 240)
     DISPLAYSURF.fill(BGCOLOR)
     DISPLAYSURF.blit(textSurfaceObj, textRectObj)
     pygame.display.update()
     time.sleep(5)
 
-def DrawPressKeyMsg():
+def DrawPressBtnMsg():
     fontObj = pygame.font.Font('freesansbold.ttf', 24)
     textSurfaceObj = fontObj.render('Press a button to play.', True, DARKGRAY)
     textRectObj = textSurfaceObj.get_rect()
-    textRectObj.center = (400, 300)
+    textRectObj.center = (400, 240)
     DISPLAYSURF.fill(BGCOLOR)
     DISPLAYSURF.blit(textSurfaceObj, textRectObj)
     pygame.display.update()
     
 def Main():
     ShowStartScreen()
-    DrawPressKeyMsg()
+    DrawPressBtnMsg()
 #    if CheckForKeyPress():
 #        pygame.event.get() # clear event queue
 #        return
