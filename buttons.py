@@ -16,11 +16,6 @@ CB1 = 10    # Actual pin 19
 CB2 = 9    # Actual pin 21
 CB3 = 11    # Actual pin 23
 
-#A+ configuration
-#GND, GPIO 16,20,21 - actual pins 34,36,38,40
-#GPIO 17, 27 22 - actual 11,13,15
-#GPIO 5,6,13 - actual 29,31,33
-
 pins = [LB1, LB2, LB3, RB1, RB2, RB3, CB1, CB2, CB3]
 # Using internal pull up resistor; no need for one in circuit; other pin on buttons to ground
 
@@ -31,8 +26,9 @@ while True:
     for pin in pins:
         input_state = GPIO.input(pin)
         if input_state == False:
-            print('Button ' + pin + ' Pressed')
+            print(pin)
+            return pin
             time.sleep(0.2)
  
 # Add below line to reset all pin status on close       
-#GPIO.cleanup()
+GPIO.cleanup()
