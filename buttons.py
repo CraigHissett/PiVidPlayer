@@ -27,9 +27,9 @@ def pressed():
         for pin in pins:
             input_state = GPIO.input(pin)
             if input_state == False:
-                print(pin)
+                print pin
                 return pin
-        time.sleep(0.2)
+            time.sleep(0.2)
  
 # Add below line to reset all pin status on close       
 GPIO.cleanup()
