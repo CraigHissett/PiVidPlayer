@@ -2,16 +2,10 @@
 #
 #import standards
 import sys, time
+import RPi.GPIO as GPIO
 
 #import everything required from my python files:
 import GUI, buttons, playlists
-
-#import other requirements
-from pyomxplayer import OMXPlayer 
-from pprint import pprint 
-
-#define any values required before we crack on!
-#omx = OMXPlayer('/tmp/video.mp4') 
 
 def Main():
   #Display 'Welcome screen', with no secondary text
@@ -57,7 +51,8 @@ def Main():
     elif buttons.pressed==CB3
       #Select next video
       playlists.skip(+1)
-  
+
+GPIO.cleanup()  
     
     
 if __name__ == '__main__': 
