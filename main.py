@@ -23,7 +23,7 @@ def Main():
   GUI.load("StartScreen", "Playlists Loaded")
   time.sleep(1)
   #Display Message to indicate ready to go
-  GUI.load("PressAnyKey")
+  GUI.load("PressAnyKey","")
   #Start to monitor buttons
   while True:
     if buttons.pressed==0
