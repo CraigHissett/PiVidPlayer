@@ -15,6 +15,36 @@ DARKGREEN = (  0, 155,   0)
 DARKGRAY  = ( 40,  40,  40)
 BGCOLOR = BLACK
 
+def load(ScreenName, ScreenText):
+    if ScreenName == "StartScreen":
+        fontObj1 = pygame.font.Font('freesansbold.ttf', 42)
+        fontObj2 = pygame.font.Font('freesansbold.ttf', 12)
+        textSurfaceObj1 = fontObj1.render('Hello, Isaac!', True, GREEN, BLACK)
+        textSurfaceObj2 = fontObj2.render(ScreenText, True, GREEN, BLACK)
+        textRectObj1 = textSurfaceObj1.get_rect()
+        textRectObj2 = textSurfaceObj2.get_rect()
+        textRectObj1.center = (400, 240)
+        textRectObj2.center = (500, 240)
+        DISPLAYSURF.fill(BGCOLOR)
+        DISPLAYSURF.blit(textSurfaceObj1, textRectObj1)
+        DISPLAYSURF.blit(textSurfaceObj2, textRectObj2)
+        pygame.display.update()
+    elif ScreenName == "PressAnyKey":
+        fontObj1 = pygame.font.Font('freesansbold.ttf', 24)
+        fontObj2 = pygame.font.Font('freesansbold.ttf', 12)
+        textSurfaceObj1 = fontObj1.render('Press a button to play.', True, DARKGRAY)
+        textSurfaceObj2 = fontObj2.render(ScreenText, True, DARKGRAY)
+        textRectObj1 = textSurfaceObj1.get_rect()
+        textRectObj2 = textSurfaceObj2.get_rect()
+        textRectObj1.center = (400, 240)
+        textRectObj2.center = (500, 240)
+        DISPLAYSURF.fill(BGCOLOR)
+        DISPLAYSURF.blit(textSurfaceObj1, textRectObj1)
+        DISPLAYSURF.blit(textSurfaceObj2, textRectObj2)
+        pygame.display.update()
+    while True:
+        CheckForKeyPress()
+
 def CheckForKeyPress():
     #Escape button on keyboard closes, for debug purposes
     #The For event below to be edited to capture GPIO buttons
@@ -49,31 +79,11 @@ def terminate():
     pygame.quit()
     sys.exit()
 
-def ShowStartScreen():
-    fontObj = pygame.font.Font('freesansbold.ttf', 32)
-    textSurfaceObj = fontObj.render('Hello, Isaac!', True, GREEN, BLACK)
-    textRectObj = textSurfaceObj.get_rect()
-    textRectObj.center = (400, 240)
-    DISPLAYSURF.fill(BGCOLOR)
-    DISPLAYSURF.blit(textSurfaceObj, textRectObj)
-    pygame.display.update()
-    time.sleep(5)
 
-def DrawPressBtnMsg():
-    fontObj = pygame.font.Font('freesansbold.ttf', 24)
-    textSurfaceObj = fontObj.render('Press a button to play.', True, DARKGRAY)
-    textRectObj = textSurfaceObj.get_rect()
-    textRectObj.center = (400, 240)
-    DISPLAYSURF.fill(BGCOLOR)
-    DISPLAYSURF.blit(textSurfaceObj, textRectObj)
-    pygame.display.update()
-    
 def Main():
-    ShowStartScreen()
-    DrawPressBtnMsg()
-#    if CheckForKeyPress():
-#        pygame.event.get() # clear event queue
-#        return
+    load("StartScreen","")
+    time.sleep(5)
+    load("PressAnyKey","")
     while True:
         CheckForKeyPress()
 
