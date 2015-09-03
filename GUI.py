@@ -1,5 +1,6 @@
 import pygame, sys, time
 from pygame.locals import *
+import buttons, playlists
 pygame.init()
 DISPLAYSURF = pygame.display.set_mode((800, 480))
 pygame.display.set_caption('PiVidPlayer')
@@ -55,7 +56,37 @@ def CheckForKeyPress():
     if keyUpEvents[0].key == K_ESCAPE:
         terminate()
     return keyUpEvents[0].key
-
+    if buttons.pressed==0
+      #Do nothing
+      return
+    elif buttons.pressed==LB1
+      #Select Playlist1, Load video 1
+      playlists.play("Peppa.txt", 1)
+    elif buttons.pressed==LB2
+      #Select Playlist2
+      playlists.play("Barney.txt", 1)
+    elif buttons.pressed==LB3
+      #Select Playlist3
+      playlists.play("Minions.txt", 1)
+    elif buttons.pressed==RB1
+      #Select Playlist1, Load video 1
+      playlists.play("Peppa.txt", 1)
+    elif buttons.pressed==RB2
+      #Select Playlist2
+      playlists.play("Barney.txt", 1)
+    elif buttons.pressed==RB3
+      #Select Playlist3
+      playlists.play("Minions.txt", 1)
+    elif buttons.pressed==CB1  
+      #Select previous video
+      playlists.skip(-1)
+    elif buttons.pressed==CB2
+      #Play/Pause
+      playlists.playpause()
+      return
+    elif buttons.pressed==CB3
+      #Select next video
+      playlists.skip(+1)
 #   Further events handling - to be integrated
 #Look for mouse functions too - use touch screen for input!
 #    for event in pygame.event.get(): 
