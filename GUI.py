@@ -42,8 +42,6 @@ def load(ScreenName, ScreenText):
         DISPLAYSURF.blit(textSurfaceObj1, textRectObj1)
         DISPLAYSURF.blit(textSurfaceObj2, textRectObj2)
         pygame.display.update()
-    while True:
-        CheckForKeyPress()
 
 def CheckForKeyPress():
     #Escape button on keyboard closes, for debug purposes
