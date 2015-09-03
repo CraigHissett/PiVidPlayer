@@ -7,24 +7,6 @@ def refresh(playlist):
     if playlist=="All"
         FindPlaylistNames()
     
-def play(SelectedPlaylist, PlayNo):
-    #Set up the OMX player code here
-    PL = open(SelectedPlaylist, "rw+")
-    video = PL.readline(PlayNo)
-    omx = OMXPlayer(video)
-    omx.toggle_pause()
-    #play 30 second snippet for demonstration purposes
-    time.sleep(30)
-    omx.stop()    
-    
-def skip(Skip):
-    #read open text file
-    #add/subtract Skip o current line number being read
-
-def playpause():
-    #Still a toggle playpause in
-    omx.toggle_pause()
-    
 def FindPlaylistNames():
     PlaylistNames = open("PlaylistDefs.txt", 'r')
     for PlaylistTitle in PlaylistNames.readlines():
