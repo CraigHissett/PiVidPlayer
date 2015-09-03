@@ -3,7 +3,7 @@ from pyomxplayer import OMXPlayer
 from pprint import pprint
 
 def refresh(playlist):
-    'define sequence for geting started
+    #define sequence for geting started
     if playlist=="All"
         FindPlaylistNames()
     
