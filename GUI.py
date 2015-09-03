@@ -1,6 +1,7 @@
 import pygame, sys, time
 from pygame.locals import *
-import buttons, playlists
+import buttons, playlists, player
+player = None
 pygame.init()
 DISPLAYSURF = pygame.display.set_mode((800, 480))
 pygame.display.set_caption('PiVidPlayer')
@@ -45,6 +46,7 @@ def load(ScreenName, ScreenText):
         pygame.display.update()
 
 def CheckForKeyPress():
+    global player
     #Escape button on keyboard closes, for debug purposes
     #The For event below to be edited to capture GPIO buttons
     #explore setting up buttons.py as defs to be called and a value returned etc?
@@ -61,32 +63,32 @@ def CheckForKeyPress():
       return
     elif buttons.pressed==LB1
       #Select Playlist1, Load video 1
-      playlists.play("Peppa.txt", 1)
+      player = player.Player("Peppa.txt")
     elif buttons.pressed==LB2
       #Select Playlist2
-      playlists.play("Barney.txt", 1)
+      player = player.Player("Barney.txt")
     elif buttons.pressed==LB3
       #Select Playlist3
-      playlists.play("Minions.txt", 1)
+      player = player.Player("Minions.txt")
     elif buttons.pressed==RB1
       #Select Playlist1, Load video 1
-      playlists.play("Peppa.txt", 1)
+      player = player.Player("Peppa.txt")
     elif buttons.pressed==RB2
       #Select Playlist2
-      playlists.play("Barney.txt", 1)
+      player = player.Player("Barney.txt")
     elif buttons.pressed==RB3
       #Select Playlist3
-      playlists.play("Minions.txt", 1)
+      player = player.Player("Minions.txt")
     elif buttons.pressed==CB1  
       #Select previous video
-      playlists.skip(-1)
+      player.Player.prev()
     elif buttons.pressed==CB2
       #Play/Pause
-      playlists.playpause()
+      player.Player.Play()
       return
     elif buttons.pressed==CB3
       #Select next video
-      playlists.skip(+1)
+      player.Player.Next()
 #   Further events handling - to be integrated
 #Look for mouse functions too - use touch screen for input!
 #    for event in pygame.event.get(): 
