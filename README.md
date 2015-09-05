@@ -7,22 +7,15 @@ To Address:
 
 1) Video Playing
 
-  TogglePlay - Play/Pause video
-  
-  StopVid - Go back to beginning and pause video
-  
-  PrevVid - Select previous video from playlist
-  
-  NextVid - Select next video from playlist
-  
-  Playlist(x) - Clear current playlist, load selected, cue first video (if video was playing when pressed then play video1; if it was paused then do not play
+Test class
   
   
 2) Creating Playlists
 
   Playlists.py now compiles all playlists (based on search criteria in a text file called 'PlaylistDefs.txt').
   It searches all drives for files containing the playlist name (ie Peppa Pig) and dumps their location to a playlist file (Peppa Pig.txt for instance).
-  To Do - Convert to a class, pass playlist contents to player.py when done.
+  To Do - Add more playlist compiling options, and maybe a copy function to import from external media.
+
   
 3) ButtonPresses
 
