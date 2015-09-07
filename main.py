@@ -20,7 +20,7 @@ def Main():
   GUI.load("PressAnyKey","")
   #Start to monitor buttons
   while True:
-    GUI.CheckForKeyPress()
+    buttons.CheckForKeyPress()
     
 if __name__ == '__main__': 
    Main() 
