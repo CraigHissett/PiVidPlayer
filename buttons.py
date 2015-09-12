@@ -45,35 +45,35 @@ def CheckForKeyPress():
     if keyUpEvents[0].key == K_ESCAPE:
         terminate()
     return keyUpEvents[0].key
-    if pressed==0
+    if pressed==0:
       #Do nothing
       return
-    elif pressed==LB1
+    elif pressed==LB1:
       #Select Playlist1, Load video 1
       player = player.Player("Peppa.txt")
-    elif pressed==LB2
+    elif pressed==LB2:
       #Select Playlist2
       player = player.Player("Barney.txt")
-    elif pressed==LB3
+    elif pressed==LB3:
       #Select Playlist3
       player = player.Player("Minions.txt")
-    elif pressed==RB1
+    elif pressed==RB1:
       #Select Playlist1, Load video 1
       player = player.Player("Peppa.txt")
-    elif pressed==RB2
+    elif pressed==RB2:
       #Select Playlist2
       player = player.Player("Barney.txt")
-    elif pressed==RB3
+    elif pressed==RB3:
       #Select Playlist3
       player = player.Player("Minions.txt")
-    elif pressed==CB1  
+    elif pressed==CB1: 
       #Select previous video
       player.Player.prev()
-    elif pressed==CB2
+    elif pressed==CB2:
       #Play/Pause
       player.Player.Play()
       return
-    elif pressed==CB3
+    elif pressed==CB3:
       #Select next video
       player.Player.Next()
 
