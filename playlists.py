@@ -4,7 +4,7 @@ from pprint import pprint
 
 def refresh(playlist):
     #define sequence for geting started
-    if playlist=="All"
+    if playlist=="All":
         FindPlaylistNames()
     
 def FindPlaylistNames():
@@ -18,7 +18,7 @@ def FindPlaylistNames():
 def SearchDrives(PlaylistTitle):
     #Create a text file, step through folder and copy file locations into text file
     PlaylistText = open(PlaylistTitle + '.txt', "w")
-    if platform.system == "Windows"
+    if platform.system == "Windows":
         from ctypes import windll
         bitmask = windll.kernel32.GetLogicalDrives()
         for DriveLetter in string.ascii_uppercase:
@@ -35,7 +35,7 @@ def SearchDrives(PlaylistTitle):
                             print(os.path.join(root, name))
                             #PlaylistText.write(os.path.join(root, name) + '\n')
             bitmask >>= 1
-    elif platform.system == "Linux"
+    elif platform.system == "Linux":
         for root, dirs, files in os.walk('/home/pi', topdown=True):
             for name in files:
                 if PlaylistTitle in name:
