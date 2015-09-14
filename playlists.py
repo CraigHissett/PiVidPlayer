@@ -63,4 +63,4 @@ def SearchDrives(PlaylistTitle):
 
 
 if __name__ == '__main__':
-    refresh("ALL")
+    refresh("All")
